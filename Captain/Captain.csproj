@@ -11,11 +11,16 @@
 
 Whether you're logging requests, injecting metrics, short-circuiting bad input, or decorating responses, Hookz lets you do it inline, fluently, and with full access to the HttpContext.</Description>
 	<Title>Captain Hookz</Title>
-	<PackageIcon>hookz3.jpg</PackageIcon>
+	<PackageIcon></PackageIcon>
 	<RepositoryUrl>https://github.com/bradleyables22/Hookz</RepositoryUrl>
 	<RepositoryType></RepositoryType>
 	<PackageTags>bradley,bradleyables,ables,aspnetcore,aspnet,minimalapi,minimal-api,minimal,endpoints,routehandler,HttpContext,hookz,middleware,extension-methods,lifecycle,pipeline,webapi,extensions,net8</PackageTags>
 	<PackageReleaseNotes>1.0.0 has dropped! This is the initial MVP, but more features will follow!</PackageReleaseNotes>
+	<PackageId>Captain.Hookz</PackageId>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<Product>Captain.Hookz</Product>
+	<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0|AnyCPU'">
@@ -45,7 +50,7 @@ Whether you're logging requests, injecting metrics, short-circuiting bad input, 
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
 	<ItemGroup>
-	  <None Include="..\..\..\..\Downloads\hookz3.jpg">
+	  <None Include="..\README.md">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
