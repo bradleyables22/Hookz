@@ -6,10 +6,48 @@
     <Nullable>enable</Nullable>
 	<Version>1.0.0</Version>
 	<Authors>Bradley Ables</Authors>
+	<ApplicationIcon>hookz3.ico</ApplicationIcon>
+	<Description>Hookz adds composable middleware-style hooks to your Minimal API endpoints, enabling clean pre-processing, post-processing, and finalization logic without cluttering your handlers.
+
+Whether you're logging requests, injecting metrics, short-circuiting bad input, or decorating responses, Hookz lets you do it inline, fluently, and with full access to the HttpContext.</Description>
+	<Title>Captain Hookz</Title>
+	<PackageIcon>hookz3.jpg</PackageIcon>
+	<RepositoryUrl>https://github.com/bradleyables22/Hookz</RepositoryUrl>
+	<RepositoryType></RepositoryType>
+	<PackageTags>bradley,bradleyables,ables,aspnetcore,aspnet,minimalapi,minimal-api,minimal,endpoints,routehandler,HttpContext,hookz,middleware,extension-methods,lifecycle,pipeline,webapi,extensions,net8</PackageTags>
+	<PackageReleaseNotes>1.0.0 has dropped! This is the initial MVP, but more features will follow!</PackageReleaseNotes>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0|AnyCPU'">
+    <IsAotCompatible>True</IsAotCompatible>
+    <IsTrimmable>False</IsTrimmable>
+  </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net9.0|AnyCPU'">
+    <IsAotCompatible>True</IsAotCompatible>
+    <IsTrimmable>False</IsTrimmable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0|AnyCPU'">
+    <IsAotCompatible>True</IsAotCompatible>
+    <IsTrimmable>False</IsTrimmable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net9.0|AnyCPU'">
+    <IsAotCompatible>True</IsAotCompatible>
+    <IsTrimmable>False</IsTrimmable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="hookz3.ico" />
+  </ItemGroup>
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="..\..\..\..\Downloads\hookz3.jpg">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 </Project>
