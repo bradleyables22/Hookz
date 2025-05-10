@@ -19,40 +19,24 @@ Supports .NET 8, and .NET 9
 ```
 🚀 Usage Examples
 
-🔐 Short-circuit unauthorized requests
-```
-app.MapGet("/secure", () => Results.Ok("Authorized"))
-   .WithBefore(ctx =>
-   {
-       if (!ctx.Request.Headers.ContainsKey("X-Auth"))
-           return Results.Unauthorized();
-
-       return ValueTask.CompletedTask;
-   });
-```
-
 📤 Modify response headers
 ```
-app.MapGet("/secure", () => Results.Ok("Authorized"))
-   .WithBefore(ctx =>
+app.MapGet("/data", () => Results.Ok("Payload"))
+   .WithAfter(ctx =>
    {
-       if (!ctx.Request.Headers.ContainsKey("X-Auth"))
-           return Results.Unauthorized();
-
-       return ValueTask.CompletedTask;
+       ctx.Response.Headers.Append("X-Processed", "true");
    });
 ```
 
-🧠 Inject services
+🧠 Inject and call other services
 ```
 app.MapPost("/log", () => Results.Ok("Logged"))
-   .WithAfter<ILogger<Program>>((ctx, logger) =>
+   .WithAfter<ILogger<Program>>(async (ctx, logger) =>
    {
-       logger.LogInformation("POST /log handled.");
-       return ValueTask.CompletedTask;
+	   await Task.Delay(500);
+	   logger.LogInformation("POST /log handled.");
    });
 ```
-
 
 🔁 Chain multiple hooks
 ```
