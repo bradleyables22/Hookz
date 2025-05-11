@@ -1,27 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0;net9.0;</TargetFrameworks>
+		<TargetFrameworks>net8.0;</TargetFrameworks>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<Version>1.0.1</Version>
+		<Version>1.0.5</Version>
 		<Authors>Bradley Ables</Authors>
 		<Description>
 			Hookz adds composable middleware-style hooks to your Minimal API endpoints, enabling clean pre-processing,
-			post-processing, and finalization logic without cluttering your handlers.
+			post-processing, and error logic without cluttering your handlers.
 
 			Whether you're logging requests, injecting metrics, short-circuiting bad input, or decorating responses,
 			Hookz lets you do it inline, fluently, and with full access to the HttpContext.
 		</Description>
 		<Title>Captain Hookz</Title>
-		<PackageIcon>hookz3.jpg</PackageIcon>
 		<RepositoryUrl>https://github.com/bradleyables22/Hookz</RepositoryUrl>
 		<RepositoryType></RepositoryType>
 		<PackageTags>
 			bradley,bradleyables,ables,aspnetcore,aspnet,minimalapi,minimal-api,minimal,endpoints,routehandler,
 			HttpContext,hookz,middleware,extension-methods,lifecycle,pipeline,webapi,extensions,net8
 		</PackageTags>
-		<PackageReleaseNotes>1.0.1 has dropped! This is the initial MVP, but more features will follow!</PackageReleaseNotes>
+		<PackageIcon>hookz3.jpg</PackageIcon>
+		<PackageReleaseNotes>1.0.5 has dropped! This is the initial MVP, more features will follow!</PackageReleaseNotes>
 		<PackageId>Captain.Hookz</PackageId>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Product>Captain.Hookz</Product>
@@ -67,7 +67,6 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</EmbeddedResource>
 	</ItemGroup>
-
 	<ItemGroup>
 		<Content Include="Images\hookz3.jpg">
 			<Pack>True</Pack>
@@ -75,7 +74,6 @@
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>
-
 	<ItemGroup>
 		<FrameworkReference Include="Microsoft.AspNetCore.App" />
 	</ItemGroup>
