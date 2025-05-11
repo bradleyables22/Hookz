@@ -1,4 +1,5 @@
-![hookz3](https://github.com/user-attachments/assets/eccdf216-23d6-440e-991f-b7b96f142859)
+
+![hookz](https://github.com/user-attachments/assets/9ef6c8b4-ad5e-4258-a1c5-523c7a508558)
 
 ### ✨ What is Hookz?
 **Hookz** adds composable lifecycle hooks (`WithBefore`, `WithAfter`, `WithError`) to your ASP.NET Minimal API endpoints.  
