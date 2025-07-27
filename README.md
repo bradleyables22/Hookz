@@ -1,9 +1,9 @@
 ![hookz3](https://github.com/user-attachments/assets/a5c9b00b-11b1-4bfd-a640-d0724a3858a6)
 ### ✨ What is Hookz?
-**Hookz** adds composable lifecycle hooks (`WithBefore`, `WithAfter`, `WithError`) to your ASP.NET Minimal API endpoints.  
+**Hookz.Http** adds composable lifecycle hooks (`WithBefore`, `WithAfter`, `WithError`) to your ASP.NET Minimal API endpoints.  
 It’s like middleware—but scoped, fluent, and inline.
 
-Hookz helps you:
+Hookz.Http helps you:
 - Short-circuit requests
 - Inject logging, metrics, and headers
 - Clean up and finalize logic after execution
@@ -47,16 +47,17 @@ app.MapGet("/multi", () => Results.Ok("Chained"))
 🧪 Unit-Test Friendly
 Hookz runs cleanly in WebApplicationFactory and supports mocking HttpContext to verify DI behavior or request filtering.
 
+
 ### 📚 Schemaless Table Helpers
 
-The `Captain.Hookz.Tables` namespace introduces `LogTailKey`, a struct that generates lexicographically descending `RowKey` values based on UTC timestamps — ideal for querying the most recent records in Azure Table Storage.
+The recent addition `Hookz.Tables` namespace introduces `LogTailKey`, a struct that generates lexicographically descending `RowKey` values based on UTC timestamps — ideal for querying the most recent records in schemaless data structures like Azure Table Storage.
 
 #### 🧭 Why use LogTailKey?
 
 - Produces **sortable RowKeys** that naturally order newest-to-oldest
-- Encapsulates tick math using `DateTime.MaxValue - now.Ticks`
+- Encapsulates tick math
 - Includes full conversion support:
-  - `ToUtcTimestamp()` for reverse conversion
+  - `ToUtc()` for reverse conversion
   - Implicit conversion to/from `string`
   - Comparison operators
 
@@ -75,6 +76,6 @@ var entity = new TableEntity("device-001", rowKey)
 await tableClient.AddEntityAsync(entity);
 
 // Later, you can reverse it
-DateTime originalTime = rowKey.ToUtcTimestamp();
+DateTime originalTime = rowKey.ToUtc();
 
 
