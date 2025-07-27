@@ -10,10 +10,7 @@
 			Hookz.Http adds composable middleware-style hooks to your Minimal API endpoints, enabling clean pre-processing,
 			post-processing, and error logic without cluttering your handlers.
 
-			Whether you're logging requests, injecting metrics, short-circuiting bad input, or decorating responses,
-			Hookz lets you do it inline, fluently, and with full access to the HttpContext.
-
-                                               Hookz.Tables includes LogTailKey, a descending timestamp key optimized for retrieving the most recent rows from Azure Table Storage using inverted ticks.
+           Hookz.Tables includes LogTailKey, a descending timestamp key optimized for retrieving the most recent rows from Azure Table Storage using inverted ticks.
 		</Description>
 		<Title>Captain Hookz</Title>
 		<RepositoryUrl>https://github.com/bradleyables22/Hookz</RepositoryUrl>
@@ -23,7 +20,7 @@
 			HttpContext,hookz,middleware,extension-methods,lifecycle,pipeline,webapi,extensions,net8
 		</PackageTags>
 		<PackageIcon>hookz3.jpg</PackageIcon>
-		<PackageReleaseNotes>1.0.5 has dropped! This is the initial MVP, more features will follow!</PackageReleaseNotes>
+		<PackageReleaseNotes>1.0.6 has dropped! This introduces Hookz.Tables, with the helpful LogTailKey struct. See docs to learn more!</PackageReleaseNotes>
 		<PackageId>Captain.Hookz</PackageId>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<Product>Captain.Hookz</Product>
