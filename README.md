@@ -47,3 +47,34 @@ app.MapGet("/multi", () => Results.Ok("Chained"))
 🧪 Unit-Test Friendly
 Hookz runs cleanly in WebApplicationFactory and supports mocking HttpContext to verify DI behavior or request filtering.
 
+### 📚 Schemaless Table Helpers
+
+The `Captain.Hookz.Tables` namespace introduces `LogTailKey`, a struct that generates lexicographically descending `RowKey` values based on UTC timestamps — ideal for querying the most recent records in Azure Table Storage.
+
+#### 🧭 Why use LogTailKey?
+
+- Produces **sortable RowKeys** that naturally order newest-to-oldest
+- Encapsulates tick math using `DateTime.MaxValue - now.Ticks`
+- Includes full conversion support:
+  - `ToUtcTimestamp()` for reverse conversion
+  - Implicit conversion to/from `string`
+  - Comparison operators
+
+#### 🛠️ Example Usage
+
+```csharp
+using Captain.Hookz.Tables;
+using Azure.Data.Tables;
+
+var rowKey = DateTime.UtcNow.ToLogTailKey(); // extension method
+var entity = new TableEntity("device-001", rowKey)
+{
+    ["Status"] = "Online"
+};
+
+await tableClient.AddEntityAsync(entity);
+
+// Later, you can reverse it
+DateTime originalTime = rowKey.ToUtcTimestamp();
+
+
